@@ -10,10 +10,10 @@ export const Header = () => {
         </a>
         <nav className="flex max-lg:hidden absolute left-1/2 -translate-x-1/2 items-center justify-center gap-x-10">
           {[
-            { label: "О нас", href: "#about" },
-            { label: "Портфолио", href: "#portfolio" },
-            { label: "Инсайты", href: "#insights" },
-            { label: "Контакты", href: "#contact" },
+            { label: "Как это работает", href: "#how" },
+            { label: "Для кого", href: "#audience" },
+            { label: "Кейсы", href: "#cases" },
+            { label: "Telegram-бот", href: "#bot" },
           ].map((item) => (
             <a
               className="uppercase inline-block font-mono text-foreground/60 hover:text-foreground/100 duration-150 transition-colors ease-out"
@@ -25,10 +25,10 @@ export const Header = () => {
           ))}
         </nav>
         <a
-          className="uppercase max-lg:hidden transition-colors ease-out duration-150 font-mono text-primary hover:text-primary/80"
-          href="#sign-in"
+          className="max-lg:hidden transition-colors ease-out duration-150 font-medium text-sm bg-primary/10 text-primary hover:bg-primary/20 px-4 py-2 rounded-full border border-primary/30"
+          href="#bot"
         >
-          Войти
+          Попробовать →
         </a>
         <MobileMenu />
       </header>

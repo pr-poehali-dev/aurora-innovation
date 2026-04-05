@@ -2,48 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Шрифт Sentient заменен на PT Serif с поддержкой кириллицы */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
+    --background: 230 25% 6%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 0%;
-    --card-foreground: 0 0% 100%;
+    --card: 230 20% 9%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 0%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 230 20% 9%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 48 100% 50%;
+    --primary: 262 83% 68%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 230 20% 14%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 230 20% 14%;
+    --muted-foreground: 230 10% 60%;
 
-    --accent: 0 0% 15%;
+    --accent: 262 83% 68%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 26%;
-    --input: 0 0% 26%;
-    --ring: 48 100% 50%;
+    --border: 230 20% 18%;
+    --input: 230 20% 18%;
+    --ring: 262 83% 68%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
-    --sidebar-background: 0 0% 5%;
+    --sidebar-background: 230 25% 6%;
     --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 48 100% 50%;
+    --sidebar-primary: 262 83% 68%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent: 230 20% 14%;
     --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 48 100% 50%;
+    --sidebar-border: 230 20% 18%;
+    --sidebar-ring: 262 83% 68%;
   }
 }
 
@@ -54,7 +54,7 @@
 
   body {
     @apply text-foreground;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Inter", sans-serif;
     background: transparent;
   }
 
@@ -82,11 +82,34 @@
   }
 
   .font-sentient {
-    font-family: 'PT Serif', serif;
+    font-family: "Space Grotesk", sans-serif;
   }
 
   .shadow-glow {
     box-shadow: 0 0 8px 2px var(--tw-shadow-color);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 60%, #34d399 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-glow {
+    box-shadow:
+      0 0 0 1px hsl(var(--border)),
+      0 4px 40px rgba(167, 139, 250, 0.06);
+    transition:
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .card-glow:hover {
+    box-shadow:
+      0 0 0 1px rgba(167, 139, 250, 0.4),
+      0 8px 48px rgba(167, 139, 250, 0.18);
+    transform: translateY(-2px);
   }
 }
 
@@ -106,9 +129,13 @@
 
 /* Vignette effect overlay */
 #webgl::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.6) 100%);
+  background: radial-gradient(
+    ellipse at center,
+    transparent 30%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
 }
