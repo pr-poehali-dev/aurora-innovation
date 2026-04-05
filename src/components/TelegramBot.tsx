@@ -1,10 +1,13 @@
 import Icon from "@/components/ui/icon";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export function TelegramBot() {
+  const cardRef = useScrollAnimation() as React.RefObject<HTMLDivElement>;
+
   return (
     <section id="bot" className="relative z-10 py-24 px-4">
       <div className="container max-w-4xl mx-auto">
-        <div className="card-glow rounded-3xl p-10 md:p-16 border border-border bg-gradient-to-br from-violet-500/10 via-blue-500/5 to-emerald-500/10 text-center relative overflow-hidden">
+        <div ref={cardRef} className="scale-in card-glow rounded-3xl p-10 md:p-16 border border-border bg-gradient-to-br from-violet-500/10 via-blue-500/5 to-emerald-500/10 text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-transparent pointer-events-none" />
           
           <div className="relative z-10">
@@ -22,7 +25,7 @@ export function TelegramBot() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <a
-                href="https://t.me/"
+                href="https://t.me/Profprobadreambot?start=281908"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 bg-[#229ED9] hover:bg-[#229ED9]/90 text-white rounded-full px-8 py-4 font-semibold text-base transition-all hover:scale-105"

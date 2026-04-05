@@ -1,8 +1,13 @@
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
 export function CaseExample() {
+  const headingRef = useScrollAnimation() as React.RefObject<HTMLDivElement>;
+  const cardsRef = useScrollAnimation(0.1) as React.RefObject<HTMLDivElement>;
+
   return (
     <section id="cases" className="relative z-10 py-24 px-4">
       <div className="container max-w-5xl mx-auto">
-        <div className="text-center mb-16">
+        <div ref={headingRef} className="fade-up text-center mb-16">
           <span className="text-primary text-sm font-mono uppercase tracking-widest mb-4 block">Пример кейса</span>
           <h2 className="text-4xl md:text-5xl font-sentient font-bold mb-6">
             Как выглядит{" "}
@@ -10,7 +15,7 @@ export function CaseExample() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div ref={cardsRef} className="stagger-children grid md:grid-cols-2 gap-6">
           <div className="card-glow bg-card rounded-2xl p-8 border border-border">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-xl bg-violet-500/20 flex items-center justify-center text-xl">📣</div>
@@ -58,7 +63,7 @@ export function CaseExample() {
         </div>
 
         <div className="text-center mt-10">
-          <a href="#bot">
+          <a href="https://t.me/Profprobadreambot?start=281908" target="_blank" rel="noopener noreferrer">
             <button className="text-primary hover:text-primary/80 transition-colors font-medium text-sm underline underline-offset-4">
               Хочу попробовать такой кейс →
             </button>

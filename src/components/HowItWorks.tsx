@@ -1,3 +1,5 @@
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
 const steps = [
   {
     num: "01",
@@ -23,10 +25,13 @@ const steps = [
 ];
 
 export function HowItWorks() {
+  const headingRef = useScrollAnimation() as React.RefObject<HTMLDivElement>;
+  const stepsRef = useScrollAnimation(0.1) as React.RefObject<HTMLDivElement>;
+
   return (
     <section id="how" className="relative z-10 py-24 px-4">
       <div className="container max-w-5xl mx-auto">
-        <div className="text-center mb-16">
+        <div ref={headingRef} className="fade-up text-center mb-16">
           <span className="text-primary text-sm font-mono uppercase tracking-widest mb-4 block">Как это работает</span>
           <h2 className="text-4xl md:text-5xl font-sentient font-bold mb-6">
             Три шага до{" "}
@@ -37,7 +42,7 @@ export function HowItWorks() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 relative">
+        <div ref={stepsRef} className="stagger-children grid md:grid-cols-3 gap-6 relative">
           <div className="hidden md:block absolute top-1/3 left-[16%] right-[16%] h-px bg-gradient-to-r from-violet-500/30 via-blue-500/30 to-emerald-500/30" />
 
           {steps.map((step, i) => (

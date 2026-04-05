@@ -13,17 +13,17 @@ export function Hero() {
       <Header />
 
       <div className="pb-20 mt-auto text-center relative">
-        <Pill className="mb-6">БЕТА-ВЕРСИЯ</Pill>
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-sentient font-bold leading-tight">
+        <Pill className="mb-6 hero-animate">БЕТА-ВЕРСИЯ</Pill>
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-sentient font-bold leading-tight hero-animate hero-animate-delay-1">
           Попробуй профессию<br />
           <span className="gradient-text font-sentient">прежде, чем выбрать</span>
         </h1>
-        <p className="text-base sm:text-lg text-foreground/60 text-balance mt-6 max-w-[480px] mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg text-foreground/60 text-balance mt-6 max-w-[480px] mx-auto leading-relaxed hero-animate hero-animate-delay-2">
           Реальные задания вместо тестов — пойми, твоё это или нет
         </p>
 
-        <div className="flex items-center justify-center gap-4 mt-10 flex-wrap">
-          <a href="#bot">
+        <div className="flex items-center justify-center gap-4 mt-10 flex-wrap hero-animate hero-animate-delay-3">
+          <a href="https://t.me/Profprobadreambot?start=281908" target="_blank" rel="noopener noreferrer">
             <Button
               className="rounded-full px-8 py-3 text-base font-semibold bg-primary text-white hover:bg-primary/90"
               onMouseEnter={() => setHovering(true)}
@@ -42,7 +42,7 @@ export function Hero() {
           </a>
         </div>
 
-        <p className="text-foreground/30 text-sm mt-6 font-mono">
+        <p className="text-foreground/30 text-sm mt-6 font-mono hero-animate hero-animate-delay-4">
           Бесплатно · Без регистрации · 10 минут
         </p>
       </div>

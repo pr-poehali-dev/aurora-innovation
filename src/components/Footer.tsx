@@ -10,7 +10,9 @@ export function Footer() {
           © 2024 ПрофПроба. Твой шанс на мечту.
         </p>
         <a
-          href="#bot"
+          href="https://t.me/Profprobadreambot?start=281908"
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-primary hover:text-primary/80 transition-colors text-sm font-medium"
         >
           Перейти в Telegram-бот →

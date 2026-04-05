@@ -1,4 +1,5 @@
 import Icon from "@/components/ui/icon";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const problems = [
   {
@@ -16,10 +17,13 @@ const problems = [
 ];
 
 export function ProblemSection() {
+  const headingRef = useScrollAnimation() as React.RefObject<HTMLDivElement>;
+  const cardsRef = useScrollAnimation(0.1) as React.RefObject<HTMLDivElement>;
+
   return (
     <section className="relative z-10 py-24 px-4">
       <div className="container max-w-5xl mx-auto">
-        <div className="text-center mb-16">
+        <div ref={headingRef} className="fade-up text-center mb-16">
           <span className="text-primary text-sm font-mono uppercase tracking-widest mb-4 block">Проблема</span>
           <h2 className="text-4xl md:text-5xl font-sentient font-bold mb-6">
             Большинство выбирают профессию{" "}
@@ -30,7 +34,7 @@ export function ProblemSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div ref={cardsRef} className="stagger-children grid md:grid-cols-3 gap-6">
           {problems.map((item, i) => (
             <div
               key={i}

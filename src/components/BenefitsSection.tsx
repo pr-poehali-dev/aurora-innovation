@@ -1,4 +1,5 @@
 import Icon from "@/components/ui/icon";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const benefits = [
   {
@@ -34,10 +35,13 @@ const benefits = [
 ];
 
 export function BenefitsSection() {
+  const headingRef = useScrollAnimation() as React.RefObject<HTMLDivElement>;
+  const cardsRef = useScrollAnimation(0.05) as React.RefObject<HTMLDivElement>;
+
   return (
     <section className="relative z-10 py-24 px-4">
       <div className="container max-w-5xl mx-auto">
-        <div className="text-center mb-16">
+        <div ref={headingRef} className="fade-up text-center mb-16">
           <span className="text-primary text-sm font-mono uppercase tracking-widest mb-4 block">Преимущества</span>
           <h2 className="text-4xl md:text-5xl font-sentient font-bold mb-6">
             Почему это{" "}
@@ -45,7 +49,7 @@ export function BenefitsSection() {
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+        <div ref={cardsRef} className="stagger-children grid sm:grid-cols-2 md:grid-cols-3 gap-5">
           {benefits.map((item, i) => (
             <div
               key={i}
